@@ -152,6 +152,13 @@ int main(void) {
 	int i;
 
 	//
+	// Initialize GPIO
+	//
+	Chip_GPIO_Init(LPC_GPIO_PORT);
+	Chip_GPIO_SetPinDIROutput(LPC_GPIO_PORT, 0, PIN_DEBUG);
+	Chip_GPIO_SetPinState(LPC_GPIO_PORT, 0, 15, false);
+
+	//
 	// Initialize UART
 	//
 
