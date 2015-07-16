@@ -176,24 +176,8 @@ int main(void) {
 
 	Chip_Clock_SetUSARTNBaseClockRate((UART_BAUD_RATE * 16), true);
 	Chip_UART_SetBaud(LPC_USART0, UART_BAUD_RATE);
-
-
-	// Enable receive data interrupt
-	//Chip_UART_IntEnable(LPC_USART0, UART_INTEN_RXRDY);
-
 	Chip_UART_TXEnable(LPC_USART0);
 	Chip_UART_Enable(LPC_USART0);
-
-	//NVIC_EnableIRQ(UART0_IRQn);
-
-
-	// Welcome message
-	//printf ("Reading ADC with DMA demo.\r\n");
-	print_byte('\r');
-	print_byte('\n');
-	print_decimal(9999);
-	print_byte('\r');
-	print_byte('\n');
 
 
 
