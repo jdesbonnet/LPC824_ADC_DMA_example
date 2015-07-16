@@ -409,6 +409,9 @@ int main(void) {
 		__WFI();
 	}
 
+	// Done with ADC sampling, stop and switch off SCT
+	Chip_ADC_DeInit(LPC_SCT);
+
 	// DMA complete. Now shift ADC data register values 4 bits right to yield
 	// 12 bit ADC data in range 0 - 4095
 	for (i = 0; i < DMA_BUFFER_SIZE * 3; i++) {
