@@ -16,6 +16,13 @@ the ADC value. So a shift right of 4 bits (>>4) needs to be performed on each
 This example is built upon examples provided by NXP for the LPC824. I recommend having
 chapters 21 (ADC), 11,12 (DMA), 16 (SCT) of UM10800 LPC82x User Manual for reference.
 
+## How to build
+
+This project was created with LPCXpresso IDE (version 7.7.2). However it should also be 
+possible to build without LPCXPresso using the GCC ARM Embedded compiler and the makefile 
+in Debug directory. More on this later. Any comments and suggestions, please email
+me (address below).
+
 Joe Desbonnet
 jdesbonnet@gmail.com
 16 July 2015.
