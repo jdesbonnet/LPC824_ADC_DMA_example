@@ -1,4 +1,4 @@
-# LPC824_ADC_DMA_example
+# LPC824 ADC DMA example
 
 An example of how to use LPC824 to read data from the
 ADC data registers directly to SRAM using Direct Memory Access (DMA). This allows
