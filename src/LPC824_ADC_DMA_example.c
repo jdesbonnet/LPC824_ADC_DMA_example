@@ -65,16 +65,6 @@ static volatile int dmaBlockCount = 0;
 
 
 /**
- * Send printf() to UART
- */
-/*
-int __sys_write(int fileh, char *buf, int len) {
-	Chip_UART_SendBlocking(LPC_USART0, buf,len);
-	return len;
-}
-*/
-
-/**
  * @brief Pulse debugging pin to indicate an event on a oscilloscope trace.
  * @param n Number of times to pulse the pin.
  * @return None
@@ -274,7 +264,6 @@ int main(void) {
 	dmaDescC.xfercfg = 			 (
 			DMA_XFERCFG_CFGVALID  // Channel descriptor is considered valid
 			| DMA_XFERCFG_SETINTA // DMA Interrupt A (A vs B can be read in ISR)
-			//| DMA_XFERCFG_SWTRIG  // When written by software, the trigger for this channel is set immediately.
 			| DMA_XFERCFG_WIDTH_16 // 8,16,32 bits allowed
 			| DMA_XFERCFG_SRCINC_0 // do not increment source
 			| DMA_XFERCFG_DSTINC_1 // increment dst by widthx1
@@ -301,7 +290,6 @@ int main(void) {
 	// ADC data register is source of DMA
 	dmaDescA.source = DMA_ADDR ( (&LPC_ADC->DR[ADC_CHANNEL]) );
 	dmaDescA.dest = DMA_ADDR(&adc_buffer[DMA_BUFFER_SIZE - 1]) ;
-	//dmaDesc.next = DMA_ADDR(0);
 	dmaDescA.next = (uint32_t)&dmaDescB;
 
 
@@ -430,14 +418,7 @@ int main(void) {
 		print_decimal(i);
 		print_byte(' ');
 		print_decimal(adc_buffer[i]);
-		//print_byte('\r');
 		print_byte('\n');
-
-		int j;
-		for (j = 0; j < 1000; j++) {
-			__NOP();
-		}
-
 	}
 
 	// Done. Sleep forever.
