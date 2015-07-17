@@ -20,9 +20,14 @@ chapters 21 (ADC), 11,12 (DMA), 16 (SCT) of UM10800 LPC82x User Manual for refer
 
 ## How to build
 
-This project was created with LPCXpresso IDE (version 7.7.2). However it should also be 
+This project was created with LPCXpresso IDE (version 7.7.2). And has a dependency on the
+LPCOpen Software Development Platform (LPC8xx packages) [1]
+
+However it should also be 
 possible to build without LPCXPresso using the GCC ARM Embedded compiler and the makefile 
-in Debug directory. More on this later. Any comments and suggestions, please email
+in Debug directory. However right now that's not working. I need to figure some way
+of packaging these LPCXpresso projects in a way that they can be compiled without
+any dependencies other than GCC for ARM embedded. Any suggestions, please email
 me (address below).
 
 ## Sample data 
@@ -34,3 +39,9 @@ The following is a ADC capture from a 40kHz ultrasound transducer at 500ksps. Ju
 Joe Desbonnet
 jdesbonnet@gmail.com
 16 July 2015.
+
+## References
+
+[1] LPCOpen Software Development Platform (LPC8xx packages)
+https://www.lpcware.com/content/nxpfile/lpcopen-software-development-platform-lpc8xx-packages
+
