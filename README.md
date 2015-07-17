@@ -25,6 +25,12 @@ possible to build without LPCXPresso using the GCC ARM Embedded compiler and the
 in Debug directory. More on this later. Any comments and suggestions, please email
 me (address below).
 
+## Sample data 
+
+The following is a ADC capture from a 40kHz ultrasound transducer at 500ksps. Just prior to the capture I taped the transducer to induce vibration.
+
+![Scope screen grab](/data/ADC_DMA_scope_trace.png)
+
 Joe Desbonnet
 jdesbonnet@gmail.com
 16 July 2015.
