@@ -37,7 +37,7 @@
 //
 // Hardware configuration
 //
-#define UART_BAUD_RATE 9600
+#define UART_BAUD_RATE 115200
 #define ADC_CHANNEL 3
 #define ADC_SAMPLE_RATE 500000
 
@@ -67,11 +67,12 @@ static volatile int dmaBlockCount = 0;
 /**
  * Send printf() to UART
  */
+/*
 int __sys_write(int fileh, char *buf, int len) {
 	Chip_UART_SendBlocking(LPC_USART0, buf,len);
 	return len;
 }
-
+*/
 
 /**
  * @brief Pulse debugging pin to indicate an event on a oscilloscope trace.
@@ -93,8 +94,14 @@ static void debug_pin_pulse (int n)
  * @return None.
  */
 static void print_byte (uint8_t n) {
-	Chip_UART_SendBlocking(LPC_USART0, &n, 1);
+	//Chip_UART_SendBlocking(LPC_USART0, &n, 1);
+
+	// Wait until data can be written to FIFO (TXRDY==1)
+	while ( (Chip_UART_GetStatus(LPC_USART0) & UART_STAT_TXRDY) == 0) {}
+
+	Chip_UART_SendByte(LPC_USART0, n);
 }
+
 /**
  * @brief Print a signed integer in decimal radix.
  * @param n Number to print.
@@ -400,8 +407,10 @@ int main(void) {
 		__WFI();
 	}
 
-	// Done with ADC sampling, stop and switch off SCT
-	Chip_ADC_DeInit(LPC_SCT);
+	// Done with ADC sampling, stop and switch off SCT, ADC
+	Chip_SCT_DeInit(LPC_SCT);
+	Chip_ADC_DeInit(LPC_ADC);
+	NVIC_DisableIRQ(DMA_IRQn);
 
 	// DMA complete. Now shift ADC data register values 4 bits right to yield
 	// 12 bit ADC data in range 0 - 4095
@@ -421,8 +430,14 @@ int main(void) {
 		print_decimal(i);
 		print_byte(' ');
 		print_decimal(adc_buffer[i]);
-		print_byte('\r');
+		//print_byte('\r');
 		print_byte('\n');
+
+		int j;
+		for (j = 0; j < 1000; j++) {
+			__NOP();
+		}
+
 	}
 
 	// Done. Sleep forever.
