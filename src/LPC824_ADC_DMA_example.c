@@ -19,6 +19,10 @@
 
  This example is built upon examples provided by NXP for the LPC824. I recommend having
  chapters 21 (ADC), 11,12 (DMA), 16 (SCT) of UM10800 LPC82x User Manual for reference.
+
+ There is a dependency on the lpc_chip_82x project/library which can be downloaded from:
+ https://www.lpcware.com/content/nxpfile/lpcopen-software-development-platform-lpc8xx-packages
+
 ===============================================================================
 */
 
