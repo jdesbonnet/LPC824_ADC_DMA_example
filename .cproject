@@ -59,7 +59,7 @@
 								<option id="com.crt.advproject.link.gcc.multicore.master.userobjs.1603146991" name="Slave Objects (not visible)" superClass="com.crt.advproject.link.gcc.multicore.master.userobjs" valueType="userObjs"/>
 								<option id="com.crt.advproject.link.arch.360686469" name="Architecture" superClass="com.crt.advproject.link.arch" value="com.crt.advproject.link.target.cm0" valueType="enumerated"/>
 								<option id="com.crt.advproject.link.thumb.1429149070" name="Thumb mode" superClass="com.crt.advproject.link.thumb" value="true" valueType="boolean"/>
-								<option id="com.crt.advproject.link.script.366018972" name="Linker script" superClass="com.crt.advproject.link.script" value="&quot;LPC824_ADC_DMA_example_Debug.ld&quot;" valueType="string"/>
+								<option id="com.crt.advproject.link.script.366018972" name="Linker script" superClass="com.crt.advproject.link.script" value="&quot;LPC824_WS2812B_DMA_Debug.ld&quot;" valueType="string"/>
 								<option id="com.crt.advproject.link.manage.761902094" name="Manage linker script" superClass="com.crt.advproject.link.manage" value="true" valueType="boolean"/>
 								<option id="gnu.c.link.option.nostdlibs.948823857" name="No startup or default libs (-nostdlib)" superClass="gnu.c.link.option.nostdlibs" value="true" valueType="boolean"/>
 								<option id="gnu.c.link.option.other.1315389840" name="Other options (-Xlinker [option])" superClass="gnu.c.link.option.other" valueType="stringList">
@@ -146,7 +146,7 @@
 								<option id="com.crt.advproject.link.gcc.multicore.master.userobjs.826662583" name="Slave Objects (not visible)" superClass="com.crt.advproject.link.gcc.multicore.master.userobjs" valueType="userObjs"/>
 								<option id="com.crt.advproject.link.arch.1661524530" name="Architecture" superClass="com.crt.advproject.link.arch" value="com.crt.advproject.link.target.cm0" valueType="enumerated"/>
 								<option id="com.crt.advproject.link.thumb.1743238756" name="Thumb mode" superClass="com.crt.advproject.link.thumb" value="true" valueType="boolean"/>
-								<option id="com.crt.advproject.link.script.759497454" name="Linker script" superClass="com.crt.advproject.link.script" value="&quot;LPC824_ADC_DMA_example_Release.ld&quot;" valueType="string"/>
+								<option id="com.crt.advproject.link.script.759497454" name="Linker script" superClass="com.crt.advproject.link.script" value="&quot;LPC824_WS2812B_DMA_Release.ld&quot;" valueType="string"/>
 								<option id="com.crt.advproject.link.manage.924650976" name="Manage linker script" superClass="com.crt.advproject.link.manage" value="true" valueType="boolean"/>
 								<option id="gnu.c.link.option.nostdlibs.1587454504" name="No startup or default libs (-nostdlib)" superClass="gnu.c.link.option.nostdlibs" value="true" valueType="boolean"/>
 								<option id="gnu.c.link.option.other.101992278" name="Other options (-Xlinker [option])" superClass="gnu.c.link.option.other" valueType="stringList">

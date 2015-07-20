@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>LPC824_ADC_DMA_example</name>
+	<name>LPC824_WS2812B_DMA</name>
 	<comment></comment>
 	<projects>
 		<project>lpc_chip_82x</project>
